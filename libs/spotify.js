@@ -1,4 +1,4 @@
-import SpotifyWebApi from "spotify-web-api-node";
+import SpotifyWebApi from "spotify-web-api-node"
 
 const scopes = [
     "user-read-email",
@@ -23,7 +23,7 @@ const params = {
 
 const queryParamsString = new URLSearchParams(params)
 
-const LOGIN_URL = `https://accounts.spotify.com/authorsize?${queryParamsString.toString}`
+const LOGIN_URL = `https://accounts.spotify.com/authorize?${queryParamsString.toString}`
 
 const spotifyApi = new SpotifyWebApi({
     clientId: process.env.NEXT_PUBLIC_CLIENT_ID ,
