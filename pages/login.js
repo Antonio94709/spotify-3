@@ -1,10 +1,10 @@
 import { getProviders , signIn } from "next-auth/react"
 import Image from "next/image"
 
-const login = ({ providers }) => {
+const login = ({ providers }) => { 
   return (
     <div className="flex flex-col items-center bg-black min-h-screen w-full justify-center">
-      <Image src="/image/spotify-2.png" width="100" height="100" />
+      <img className="w-52 mb-5" src="https://www.freepnglogos.com/uploads/spotify-logo-png/file-spotify-logo-png-4.png" alt="logo"/>
       {Object.values(providers).map((provider) => (
         <div key={provider.name} className="mt-3">
           <button className="bg-green-500 text-white rounded-full p-4" onClick={() => signIn(provider.id, { callbackUrl: "/"})}>
@@ -27,3 +27,4 @@ export async function getServerSideProps() {
     }
   }
 }
+// 1:34
