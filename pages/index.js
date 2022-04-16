@@ -3,6 +3,8 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Sidebar from '../components/Sidebar'
 import Center from '../components/Center'
+import { getSession } from 'next-auth/react'
+import Player from '../components/Player'
 
 export default function Home() {
   return (
@@ -19,6 +21,19 @@ export default function Home() {
         {/* sidebar */}
         {/* mainbar */}
       </main>
+      <div className='sticky bottom-0'>
+        <Player/>
+      </div>
     </div>
   )
+}
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context)
+
+  return {
+    props: {
+      session
+    }
+  }
 }
