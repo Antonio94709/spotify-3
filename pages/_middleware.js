@@ -11,7 +11,7 @@ export async function middleware(req) {
     }
     // redirect from login
     if (!token && pathname !== '/login') {
-        return NextResponse.redirect('http://localhost:3000/login')
+        return NextResponse.redirect('https://spotify-3-alpha.vercel.app/login')
     }
 
 }
